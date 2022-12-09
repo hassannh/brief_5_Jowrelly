@@ -91,3 +91,6 @@ require_once './app/views/includes/header.php';
         <button id="buttonS" type="submit">submit</button>
       </div>
 
+      <?php
+  require_once './app/views/includes/footer.php';
+  ?>

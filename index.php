@@ -19,7 +19,7 @@ if (isset($_GET['page'])) {
     $home -> index('home');
 }
 
-require_once './app/views/includes/footer.php';
+// require_once './app/views/includes/footer.php';
 
 
 ?>

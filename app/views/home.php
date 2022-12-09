@@ -433,6 +433,10 @@ require_once './app/views/includes/header.php';
     </div>
   </section>
 
+  <?php
+  require_once './app/views/includes/footer.php';
+  ?>
+
   <!-- end client section -->
 
  

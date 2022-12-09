@@ -47,5 +47,9 @@ require_once './app/views/includes/header.php';
 
   <!-- end about section -->
 
+  <?php
+  require_once './app/views/includes/footer.php';
+  ?>
+
 
  

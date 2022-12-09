@@ -2,14 +2,15 @@
 require_once './app/controllers/ItemsControllers.php';
 require_once './app/controllers/UsersControllers.php';
 $noNavbar1 = '';
+$noFooter = '';
 require_once './app/views/includes/header.php';
  ?>
 
 
 
-
-
-
+<?php
+require_once './app/views/includes/footer.php';
+?>
 
 <!-- <form class="login" action="Admin" method="POST">
     <label for="user">Username</label>
