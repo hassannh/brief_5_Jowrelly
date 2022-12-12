@@ -10,41 +10,23 @@ class products
         return $items;
     }
 
-    static public function insertIntoItems($name, $desc, $quantity, $price, $add_date,$image )
+    static public function insertIntoItems($params)
     {
-        $stmt = DB::connect()->prepare('INSERT INTO 
-                                                products (
-                                                    name,
-                                                    description, 
-                                                    quantité,
-                                                    price,
-                                                    $add_date,
-                                                    pctur
-                                                    
-                                                ) 
-                                            VALUES (
-                                                :zname,
-                                                :zdescription,
-                                                :zquantité
-                                                :zprice,
-                                                :zadd_date,
-                                                :zimage
-                                                
-                                            )
-                                        ');
-        $stmt->execute(
-            array(
-                'zname' => $name,
-                'zdescription' => $desc,
-                'zquantité' => $quantity,
-                'zprice' => $price,
-                ':zadd_date' => $add_date,
-                'zimage' => $img
-            )
-        );
+        // $name, $desc, $quantity, $price, $img
+        // [Name=>'dzedz',Description=>'edzd', quantity,price,]
+        //     picture
+        $columns = array_keys($params); 
+        $sql = 'INSERT INTO products ('.implode(',',$columns) .') VALUES ('.implode(',',array_map(fn($item)=> ":$item" ,$columns) ) .')';
+        $stmt = DB::connect()->prepare($sql);
+
+        foreach ($params as $key => $value) {
+            $stmt->bindValue(":$key",$value);
+        }
+        
+        $stmt->execute();
     }
 
-    static public function updateItems($name, $desc, $quantity, $price, $add_date,$image , $id_i)
+    static public function updateItems($name, $desc, $quantity, $price ,$image , $id_i)
     {
         $stmt = DB::connect()->prepare("UPDATE 
         products 
@@ -53,20 +35,20 @@ class products
     description=?, 
     quantité=?,
     price=?,
-    add_date=?,
     image=?
     WHERE 
-        id_i = ?");
+    item_ID = ?");
 
-        $stmt->execute(array($name, $desc, $quantity, $price, $add_date,$image, $id_i));
+        $stmt->execute(array($name, $desc, $quantity, $price,$image, $id_i));
     }
 
     static public function deleteItems($id_i)
     {
-        $stmt = DB::connect()->prepare("DELETE FROM products WHERE id_i = :zid");
+        $stmt = DB::connect()->prepare("DELETE FROM products WHERE item_ID = :zid");
 
         $stmt->bindParam(":zid", $id_i);
 
         $stmt->execute();
+        
     }
 }

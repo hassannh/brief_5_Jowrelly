@@ -1,17 +1,4 @@
 
- <div class="" id="">
-            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
-              <ul class="navbar-nav  ">
-                <li class="nav-item active">
-                  <a class="nav-link" href="home">manage </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="about"> logout</a>
-                </li>
-               
-              </ul>
-
-            </div>
 
 
 
@@ -44,7 +31,6 @@ $items = $data->selectItems();
                 <td>Description</td>
                 <td>Quantity</td>
                 <td>Price</td>
-                <td>Adding Date</td>
                 <td>Picture</td>
                 <td>Control</td>
             </tr>
@@ -58,11 +44,10 @@ $items = $data->selectItems();
              echo "<td>" . $item['Description'] . "</td>";
              echo "<td>" . $item['quantity'] . "</td>";
              echo "<td>" . $item['price'] . "</td>";
-             echo "<td>" . $item['add_date'] . "</td>";
              echo '<td> <img style="width: 38px;" src="app/views/includes/images/' . $item['picture'] . '" alt="item"> </td>';
              echo '<td style=" GAP: 10PX; DISPLAY: flex; FLEX-WRAP: WRAP; JUSTIFY-CONTENT: center;" class="controol">';
-             echo "<a href='items.php?do=Edit&itemid=" . $item['item_ID'] . "' class='btn btn-success'><i class='fa fa-edit'></i> Edit</a>";
-            echo "<a href='items.php?do=Delete&itemid=" . $item['item_ID'] . "' class='btn btn-danger confirm'><i class='fa fa-close'></i> Delete </a>";
+             echo "<a href='Edite?itemid=" . $item['item_ID'] . "' class='btn btn-success'><i class='fa fa-edit'></i> Edit</a>";
+            echo "<a href='./?itemid=" . $item['item_ID'] . "' class='btn btn-danger confirm'><i class='fa fa-close'></i> Delete </a>";
             echo "</td>";
             echo "</tr>";
          }

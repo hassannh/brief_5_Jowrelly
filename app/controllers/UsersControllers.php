@@ -20,7 +20,7 @@ class usersController{
         $email = $_POST['email'];
         $password = $_POST['password'];
         $id_u = $_POST['id_u'];
-        users::updateUsers($username, $email, $password, $avatar, $id_u);
+        users::updateUsers($username, $email, $password, $id_u);
     }
     public function deleteUsers()
     {
@@ -36,7 +36,7 @@ class adminsController
 {
     static public function selectAdmins()
     {
-        $users = admins::selectAdmins();
+        $users = users::selectUsers();
         return $users;
     }
     
@@ -48,7 +48,7 @@ class membersController
 {
     static public function selectMembers()
     {
-        $users = members::selectMembers();
+        $users = users::selectUsers();
         return $users;
     }
 }

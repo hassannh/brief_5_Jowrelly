@@ -11,15 +11,13 @@ class users
         return $users;
     }
 
-    static public function insertIntoUsers($username, $email, $password)
+    static public function insertIntoUsers($username , $email , $password)
     {
         $stmt = DB::connect()->prepare('INSERT INTO 
                                                 users (
-                                                    username,
-                                                    email, 
-                                                    password
+                                                    ".
                                                 
-                                                ) 
+                                                ".) 
                                             VALUES (
                                                 :zusername,
                                                 :zemail,

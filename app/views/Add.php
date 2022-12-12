@@ -3,12 +3,17 @@
  require_once './app/controllers/UsersControllers.php';
  require_once './app/views/includes/header.php';
 $noFooter = '';
+if (isset($_POST['add'])) {
+    $data = new itemsController();
+    $data->insertIntoItems();
+    
+}
 ?>
 
 
 
 
-<form class="add_item" action="?do=Insert" method="POST">
+<form class="add_item" action="" method="POST" autocomplete="off" enctype="multipart/form-data">
     <div class="item">
         <label class="input-group-text label_item" for="name">Name of product</label>
         <input type="text" class="form-control" name="name" placeholder="Name Of The Item" required="required">
@@ -26,17 +31,19 @@ $noFooter = '';
 
 
     <div class="item">
-        <label class="input-group-text label_item" for="prix_item">Price of product</label>
+        <label class="input-group-text label_item" for="price">Price of product</label>
         <input type="text" class="form-control" name="price" placeholder="Price Of The Item" required="required">
     </div>
     <div class="item">
-        <label class="input-group-text label_item" for="img_item">Pictur</label>
-        <input class="form-control input_item" type="file" name="img_item" accept="image/png, image/jpeg, image/jpg"
+        <label class="input-group-text label_item" for="picture">Pictur</label>
+        <input class="form-control input_item" type="file" name="picture" accept="image/png, image/jpeg, image/jpg"
             required="required">
 
     </div>
    
     <div class="submit_add">
-        <input class="input-group-text input_submit" type="submit" value="+ Add product">
+        <input name="add" class="input-group-text input_submit" type="submit" value="+ Add product">
     </div>
 </form>
+
+<?php  require_once './app/views/includes/footer.php'; ?>

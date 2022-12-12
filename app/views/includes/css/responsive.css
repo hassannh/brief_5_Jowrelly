@@ -117,3 +117,35 @@
     max-width: 1170px;
   }
 }
+
+
+
+
+
+
+@media (min-width:900px) {
+  .label_item {
+      width: 320px;
+      margin-bottom: 10px;
+  }
+  input.form-control {
+      height: 37px;
+  }
+}
+@media (max-width:900px) {
+  .item {
+      display: flex;
+      flex-direction: column;
+  }
+  .label_item {
+      width: 100% !important;
+      margin-bottom: 10px;
+      align-items: center;
+      justify-content: center;
+  }
+  .input_submit{
+    width: 100%;
+    display: flex;
+     justify-content: center;
+}
+}
