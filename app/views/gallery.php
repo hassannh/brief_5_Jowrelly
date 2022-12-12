@@ -64,18 +64,8 @@ require_once './app/views/includes/header.php';
     <span><?=$item['price']?> DH</span>
   </div>
 </div>
-            <!-- echo '<div class="box">';
-                echo '<div class="price">';
-                    echo $item['price'];
-                echo '</div>';
-                echo '<div class="img-box">';
-                    echo '<img src="app/views/includes/images/'. $item['picture'] . '" alt="item">';
-                echo '</div>';
-                echo '<div class="name">';
-                    echo $item['Name'];
-                echo '</div>';
-            echo '</div>'; -->
-            <?php
+    
+   <?php
         }
         ?>
         </div>

@@ -12,32 +12,31 @@ class itemsController{
  
     public function insertIntoItems()
     {
-        $name = $_POST['nameItem'];
-        $desc = $_POST['description'];
-        $quantity = $_POST['quant'];
+        $id_i = $_POST['id_item'];
+        $name = $_POST['Name'];
+        $desc = $_POST['Description'];
+        $quantity = $_POST['Quantity'];
         $prix = $_POST['price'];
-        $add_date = $_post['date'];
+        $add_date = $_post['add_date'];
         $img = $_POST['picture'];
-        $add_date = $_POST['add_date'];
-        $id_i = $_POST['id_i'];
         products::insertIntoItems($name, $desc, $quantity, $price, $add_date,$image);
     }
     public function updateItems()
     {
-        $name = $_POST['nameItem'];
-        $desc = $_POST['description'];
-        $quantity = $_POST['quant'];
+        $id_i = $_POST['id_item'];
+        $name = $_POST['Name'];
+        $desc = $_POST['Description'];
+        $quantity = $_POST['Quantity'];
         $prix = $_POST['price'];
-        $add_date = $_post['date'];
+        $add_date = $_post['add_date'];
         $img = $_POST['picture'];
-        $add_date = $_POST['add_date'];
-        $id_i = $_POST['id_i'];
+        
         products::updateItems($name, $desc, $quantity, $price, $add_date,$image, $id_i);
     }
     public function deleteItems()
     {
-        $id_i = $_POST['id_i'];
-        products::deleteItems($id_i);
+        $id_i = $_POST['Id_item'];
+        products::deleteItems($Id_item);
     }
 
 }

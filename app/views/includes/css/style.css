@@ -926,3 +926,25 @@ a:focus {
 .submit {
   width: 100%;
 }
+
+
+/* add page */
+
+form.add_item {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 50% !important;
+  margin: 0% 25% !important;
+  gap: 10px;
+  padding-top: 100px;
+}
+
+.item {
+  display: flex;
+}
+
+.label_item {
+  width: 245px;
+  margin-right: 2%;
+
+}
